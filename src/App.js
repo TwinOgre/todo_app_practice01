@@ -26,7 +26,7 @@ function App() {
     console.log(id);
     const checkedList = todos.map((todo) => {
       if(id == todo.id){
-        setTodos([...todos, {id: todo.id, text: todo.text, checked: !todo.checked}])
+        setTodos([...todos, { checked: !todo.checked}])
       }
     })
   }
