@@ -1,16 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Nav from "./componenet/Nav";
 import Input from "./componenet/Input";
 import List from "./componenet/List";
 function App() {
-  const initialTodos = [
-    {id: 1, text: "할일 A", checked: false},
-    {id: 2, text: "할일 B", checked: false},
-    {id: 3, text: "할일 C", checked: false}
-  ];
-  const [todos, setTodos] = useState(initialTodos);
+  const [todos, setTodos] = useState([]);
+  
+useEffect(()=> {
+fetch('https://dummyjson.com/todos')
+.then(res => res.json())
+.then(data => setTodos(data.todos));
+}, [])
+
+  
+  
   const [text, setText] = useState('');
   const [lastId, setLastId] = useState(4);
+
   const onInput = (e) => {
     e.preventDefault();
     console.log(e)
@@ -26,7 +31,7 @@ function App() {
     console.log(id);
     const checkedList = todos.map((todo) => {
       if(id == todo.id){
-        setTodos([...todos, { checked: !todo.checked}])
+        setTodos([...todos, {id: todo.id, text: todo.text, checked: !todo.checked}])
       }
     })
   }
