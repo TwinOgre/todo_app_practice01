@@ -1,7 +1,7 @@
 import Item from "./Item";
-function List({todos, onChecked}) {
+function List({todos, onChecked, onDelete}) {
     return ( <ul>
-        {todos.map(todo => <Item todo={todo} onChecked={onChecked}/>)}
+        {todos.map(todo => <Item todo={todo} onChecked={onChecked} onDelete={onDelete}/>)}
     </ul> );
 }
 
