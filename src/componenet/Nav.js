@@ -1,5 +1,12 @@
+import { Link } from "react-router-dom";
 function Nav() {
-    return ( <h1>✅ToDo List✅</h1> );
+    return (
+        <nav>
+            <Link to="/">홈</Link>
+            <br />
+            <Link to="/todos">할일</Link>
+        </nav>
+    );
 }
 
 export default Nav;
