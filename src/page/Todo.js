@@ -14,9 +14,9 @@ function Todo() {
 
     return (<div style={{ marginLeft: "50px" }}>
         <h1>Todo no.{todo.id}</h1>
-        <input type="checkbox" checked={todo.completed}/>
         <h3>📃id: {todo.id}</h3>
         <h4>📌todo: {todo.todo}</h4>
+        <h4> completed: {todo.completed ? "✅" : "❌"}</h4>
         <div>😎userId: {todo.userId}</div>
     </div>);
 }
