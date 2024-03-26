@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Nav from "../componenet/Nav";
 function Todo() {
     let { id } = useParams();
     const fetchString = "https://dummyjson.com/todos/" + id;
@@ -13,6 +14,7 @@ function Todo() {
 
 
     return (<div style={{ marginLeft: "50px" }}>
+        <Nav />
         <h1>Todo no.{todo.id}</h1>
         <h3>📃id: {todo.id}</h3>
         <h4>📌todo: {todo.todo}</h4>
